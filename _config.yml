@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://mazhuang.org
+url: http://devsu.top
 date_format: "ordinal"
 title: 主标题
 subtitle: "副标题"
