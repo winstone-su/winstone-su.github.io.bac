@@ -3,7 +3,8 @@ layout: post
 title: "利用github作iOS企业分发App"
 date: 2014-11-12 16:00:00
 description: "利用github作iOS企业分发App"
-tag: iOS
+categories: iOS
+tag: iOS, 企业分发
 
 ---
 

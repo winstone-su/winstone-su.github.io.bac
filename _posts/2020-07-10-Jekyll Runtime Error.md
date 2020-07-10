@@ -14,7 +14,7 @@ topmost: false
 
 ---
 
- <font color= "red">Jekyll</font> 运行时发生错误:
+ <font color= "red">Jekyll</font>  运行时发生错误:
 
 ```shell
 /Library/Ruby/Gems/2.6.0/gems/bundler-2.1.4/lib/bundler/runtime.rb:312:in `check_for_activated_spec!':

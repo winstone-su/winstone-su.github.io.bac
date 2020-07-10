@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "mobileprovision文件位置"
+categories: iOS 
 date: 2014-10-15 08:49:00
 description: "mobileprovision文件位置"
-tag: iOS
+tag: iOS,mobileprovision
 
 ---
 
