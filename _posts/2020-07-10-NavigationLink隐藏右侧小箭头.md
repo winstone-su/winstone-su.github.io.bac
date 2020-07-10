@@ -8,7 +8,7 @@ categories: Swift
 
 description: 
 
-keywords: Swift,NaavigationLink
+keywords: Swift,NavigationLink
 
 topmost: false
 
