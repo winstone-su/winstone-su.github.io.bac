@@ -1,4 +1,9 @@
-- name: 码志
+- name: markdown
+  url: https://www.runoob.com/markdown/md-tutorial.html
+  src: life
+
+- 
+  name: 码志
   url: http://mazhuang.org
   src: life
 
@@ -18,9 +23,6 @@
   url: http://www.fengerzh.com/
   src: life
 
-- name: 叮咚购
-  url: http://www.ringwang.com/
-  src: life
 
 - name: wanandroid
   url: http://www.wanandroid.com/
