@@ -30,6 +30,12 @@ topmost: true
 
 ![Interceptor Bridge]({{site.url}}/assets/images/202106/20210625-1.png) 
 
+ ```html
+ Mac OS下需要先安装Node.js环境，没有的话，会自动下载node.js的安装包
+ ```
+
+
+
 # 打开Requests 和Cookies
 
 ​		![Request Cookie]({{site.url}}/assets/images/202106/20210625-2.png) 
