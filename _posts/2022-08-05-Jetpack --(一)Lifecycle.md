@@ -252,3 +252,124 @@ class MyApplication : Application() {
 }
 ```
 
+
+
+## 应用场景:
+
+  ### 应用启动广告
+
+```kotlin
+class AdvertisingManage: LifecycleEventObserver{
+    companion object{
+        private const val TAG = "AdvertisingManage"
+    }
+
+    var advertisingManagerListener: AdvertisingManagerListener? = null
+
+    private var countDownTimer: CountDownTimer? = object : CountDownTimer(5000,1000){
+        override fun onTick(p0: Long) {
+            Log.e(TAG, "广告剩余${(p0 / 1000).toInt()}秒"  )
+            advertisingManagerListener?.timing((p0 / 1000).toInt())
+        }
+
+        override fun onFinish() {
+            Log.e(TAG, "广告结束,准备进入主界面" )
+            advertisingManagerListener?.enterMainActivity()
+        }
+
+    }
+
+    private fun start(){
+        Log.e(TAG, "开始计时" )
+        countDownTimer?.start()
+    }
+
+    private fun stop(){
+        Log.e(TAG, "停止计时", )
+        countDownTimer?.cancel()
+        countDownTimer = null
+    }
+
+
+    interface AdvertisingManagerListener {
+
+        fun timing(second: Int)
+
+        fun enterMainActivity()
+    }
+
+    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+        when(event){
+            Lifecycle.Event.ON_CREATE -> start()
+            Lifecycle.Event.ON_DESTROY -> stop()
+            else -> {}
+        }
+    }
+}
+```
+
+
+
+```kotlin
+class AdvertisingActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityAdvertisingBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityAdvertisingBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
+        val advertisingManage = AdvertisingManage()
+        advertisingManage.advertisingManagerListener = object : AdvertisingManage.AdvertisingManagerListener{
+            @SuppressLint("SetTextI18n")
+            override fun timing(second: Int) {
+                binding.textView.apply {
+                    text = "广告剩余${second}秒"
+                }
+            }
+            override fun enterMainActivity() {
+                startActivity(Intent(this@AdvertisingActivity,MainActivity::class.java))
+            }
+        }
+        binding.button.apply {
+            setOnClickListener{
+                startActivity(Intent(this@AdvertisingActivity,MainActivity::class.java))
+                finish()
+            }
+        }
+        //在Activity注册Oberver
+        lifecycle.addObserver(advertisingManage)
+    }
+
+}
+```
+
+
+
+### 打造一个防止内存泄漏的Dialog
+
+```kotlin
+class TipDialog(context: Context) : Dialog(context),LifecycleObserver{
+
+    init {
+        if (context is ComponentActivity){
+            context.lifecycle.addObserver(this)
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.dialog_tip)
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    private fun onDestroy(){
+        if (isShowing){
+            dismiss()
+        }
+    }
+}
+```
+
