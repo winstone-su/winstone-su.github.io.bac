@@ -373,3 +373,56 @@ class TipDialog(context: Context) : Dialog(context),LifecycleObserver{
 }
 ```
 
+
+
+### 打造一个支持Lifecycle的MapView
+
+```kotlin
+class GeoMapView(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs),LifecycleEventObserver {
+    private var mapView: MapView? = null
+
+    init {
+        mapView = MapView(context)
+        addView(mapView)
+        if (context is ComponentActivity){
+            context.lifecycle.addObserver(this)
+        }
+        Timber.e("constructor method invoked")
+    }
+
+    /**
+     * 获取真正的mapView
+     *
+     * @return
+     */
+    fun getMapView(): MapView? {
+        return mapView
+    }
+
+    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+        when(event.targetState){
+            Lifecycle.State.CREATED -> onCreate(source)
+            Lifecycle.State.DESTROYED -> onDestroy()
+            Lifecycle.State.RESUMED -> onResume()
+            else -> {}
+        }
+    }
+
+    private fun onDestroy(){
+        Timber.e("onDestroy")
+        mapView?.dispose()
+    }
+
+    private fun onResume(){
+        mapView?.resume()
+        Timber.e("onResume")
+    }
+
+    private fun onCreate(source: LifecycleOwner){
+        Timber.e("onCreate")
+    }
+
+}
+
+```
+
