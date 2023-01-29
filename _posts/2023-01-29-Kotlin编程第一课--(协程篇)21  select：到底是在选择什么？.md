@@ -2,6 +2,8 @@
 
 # Kotlin编程第一课--(协程篇)21 | select：到底是在选择什么？
 
+<audio id="audioPlayer" controlslist="nodownload" controls="" src="https://github.com/winstone-su/imageHosting/blob/main/course/kotlin/kotlin-programming-first-lesson/21%20_%20select%EF%BC%9A%E5%88%B0%E5%BA%95%E6%98%AF%E5%9C%A8%E9%80%89%E6%8B%A9%E4%BB%80%E4%B9%88%EF%BC%9F-%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4.mp3?raw=true" style="position: relative; width: 565px; height: 54px; left: 0px; top: 0px;"></audio>
+
 今天我们来学习 Kotlin 协程的 select。
 
 select，在目前的 Kotlin 1.6 当中，仍然是一个**实验性的特性**（Experimental）。但是，考虑到 select 具有较强的实用性，我决定还是来给你介绍一下它。
