@@ -1,6 +1,6 @@
 
 
-# Kotlin编程第一课--17 | Context：万物皆为Context？
+# Kotlin编程第一课--(协程篇)17 | Context：万物皆为Context？
 
 今天我们来学习 Kotlin 协程的 Context。
 
@@ -123,8 +123,7 @@ Thread:DefaultDispatcher-worker-1 @coroutine#1
 
 这时候，我们会发现，所有的代码都运行在 DefaultDispatcher 这个线程池当中了。而 Kotlin 官方除了提供了 Dispatchers.IO 以外，还提供了 Dispatchers.Main、Dispatchers.Unconfined、Dispatchers.Default 这几种内置 Dispatcher。我来分别给你介绍一下：
 
-* **Dispatchers.Main**，它只在 UI 编程平台才有意义，在 Android、Swing 之类的平台上，一般只有 Main 线程才能用于 UI 绘制。这个 Dispatcher 
-* 在普通的 JVM 工程当中，是无法直接使用的。
+* **Dispatchers.Main**，它只在 UI 编程平台才有意义，在 Android、Swing 之类的平台上，一般只有 Main 线程才能用于 UI 绘制。这个 Dispatcher 在普通的 JVM 工程当中，是无法直接使用的。
 * **Dispatchers.Unconfined**，代表无所谓，当前协程可能运行在任意线程之上。
 * **Dispatchers.Default**，它是用于 CPU 密集型任务的线程池。一般来说，它内部的线程个数是与机器 CPU 核心数量保持一致的，不过它有一个最小限制 2。
 * **Dispatchers.IO**，它是用于 IO 密集型任务的线程池。它内部的线程数量一般会更多一些（比如 64 个），具体线程的数量我们可以通过参数来配置：kotlinx.coroutines.io.parallelism。
@@ -165,7 +164,7 @@ Thread:DefaultDispatcher-worker-2 @coroutine#1
 */
 ```
 
-当 Dispatchers.Default 线程池当中有富余线程的时候，它是可以被 IO 线程池复用的。可以看到，后面三个结果的输出都是在同一个线程之上的，这就是因为 Dispatchers.Default 被 Dispatchers.IO 复用线程导致的。如果我们换成自定义的 Dispatcher，结果就会不一样了。
+***当 Dispatchers.Default 线程池当中有富余线程的时候，它是可以被 IO 线程池复用的***。可以看到，后面三个结果的输出都是在同一个线程之上的，这就是因为 Dispatchers.Default 被 Dispatchers.IO 复用线程导致的。如果我们换成自定义的 Dispatcher，结果就会不一样了。
 
 ```kotlin
 
