@@ -121,7 +121,6 @@ fun main() = runBlocking {
 ```kotlin
 
 // 代码段3
-
 public fun <E> Channel(
     capacity: Int = RENDEZVOUS,
     onBufferOverflow: BufferOverflow = BufferOverflow.SUSPEND,
