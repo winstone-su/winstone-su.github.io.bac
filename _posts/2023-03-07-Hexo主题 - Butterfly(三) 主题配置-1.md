@@ -4,7 +4,7 @@
 
 ##  语言
 
-修改站点配置文件<font color="red">` _config.yml`</font>
+修改站点配置文件` _config.yml`
 
 默认语言是 `en`
 
@@ -16,17 +16,17 @@
 
 ## 网站资料
 
-修改网站各种资料，例如标题、副标题和邮箱等个人资料，请修改博客根目录的<font color="red">` _config.yml`</font>
+修改网站各种资料，例如标题、副标题和邮箱等个人资料，请修改博客根目录的` _config.yml`
 
 ![](https://file.crazywong.com/gh/jerryc127/CDN/img/20191120000444.png)
 
 ## 导航菜单
 
-修改 <font color="red">`主题配置文件`</font>
+修改 `主题配置文件`
 
-> 注意: 如果我们前面配置了<font color="red">`_config.butterfly.yml`</font>，那么就修改根目录的<font color="red">`_config.butterfly.yml`</font>
+> 注意: 如果我们前面配置了`_config.butterfly.yml`，那么就修改根目录的`_config.butterfly.yml`
 >
-> 如果没有配置<font color="red">`_config.butterfly.yml`</font>,就修改<font color="red">`node_modules\hexo-theme-butterfly\_config.xml`</font>
+> 如果没有配置`_config.butterfly.yml`,就修改`node_modules\hexo-theme-butterfly\_config.xml`
 
 ```yaml
 Home: / || fas fa-home
@@ -40,11 +40,11 @@ Link: /link/ || fas fa-link
 About: /about/ || fas fa-heart
 ```
 
-必须是<font color="red">` /xxx/`</font>，后面<font color="red">` ||`</font>分开，然后写图标名。
+必须是` /xxx/`，后面` ||`分开，然后写图标名。
 
 如果不希望显示图标，图标名可不写。
 
-默认子目录是展开的，如果你想要隐藏，在子目录里添加 <font color="red">` hide`</font>。
+默认子目录是展开的，如果你想要隐藏，在子目录里添加 ` hide`。
 
 ```yaml
 List||fas fa-list||hide:
@@ -99,7 +99,7 @@ nav:
 
 {% tabs test1 %}
 <!-- tab 默认主题 -->
-<font color="red">`Butterfly`</font> 支持6种代码高亮样式：
+`Butterfly` 支持6种代码高亮样式：
 
 - darker
 - pale night
@@ -108,7 +108,7 @@ nav:
 - mac
 - mac light
 
-修改 <font color="red">`主题配置文件`</font>
+修改 `主题配置文件`
 
 ```yaml
 highlight_theme: light
@@ -154,7 +154,7 @@ highlight_theme: light
 
 主题支持代码复制功能
 
-修改 <font color="red">主题配置文件</font>
+修改 主题配置文件
 
 ```yaml
 highlight_copy: true
@@ -164,13 +164,13 @@ highlight_copy: true
 
 ### 代码框展开/关闭
 
-在默认情况下，代码框自动展开，可设置是否所有代码框都关闭状态，点击<font color="red">`>`</font>可展开代码
+在默认情况下，代码框自动展开，可设置是否所有代码框都关闭状态，点击`>`可展开代码
 
-- true 全部代码框不展开，需点击<font color="red">`>`</font>打开
-- false 代码框展开，有<font color="red">`>`</font>点击按钮
-- none 不显示<font color="red">`>`</font>按钮
+- true 全部代码框不展开，需点击`>`打开
+- false 代码框展开，有`>`点击按钮
+- none 不显示`>`按钮
 
-修改 <font color="red">主题配置文件</font>
+修改 主题配置文件
 
 ```yaml
 highlight_shrink: true #代码框不展开，需点击 '>' 打开
@@ -178,20 +178,20 @@ highlight_shrink: true #代码框不展开，需点击 '>' 打开
 
 > 你也可以在post/page页对应的markdown文件front-matter添加highlight_shrink来独立配置。
 >
-> 当主题配置文件中的 <font color="red">`highlight_shrink` </font>设为true时，可在front-matter添加 <font color="red">`highlight_shrink: false`</font>来单独配置文章展开代码框。
+> 当主题配置文件中的 `highlight_shrink` 设为true时，可在front-matter添加 `highlight_shrink: false`来单独配置文章展开代码框。
 >
-> 当主题配置文件中的  <font color="red">`highlight_shrink` </font> 设为false时，可在front-matter添加 <font color="red">`highlight_shrink: true`</font>来单独配置文章收缩代码框。
+> 当主题配置文件中的  `highlight_shrink`  设为false时，可在front-matter添加 `highlight_shrink: true`来单独配置文章收缩代码框。
 >
 
- <font color="red">`highlight_shrink: true`</font>
+ `highlight_shrink: true`
 
 ![](https://raw.githubusercontent.com/winstone-su/imageHosting/main/image/202303071655866.png)
 
- <font color="red">`highlight_shrink: false`</font>
+ `highlight_shrink: false`
 
 ![](https://raw.githubusercontent.com/winstone-su/imageHosting/main/image/202303071655593.png)
 
- <font color="red">`highlight_shrink: none`</font>
+ `highlight_shrink: none`
 
 ![](https://raw.githubusercontent.com/winstone-su/imageHosting/main/image/202303071655529.png)
 
@@ -199,13 +199,13 @@ highlight_shrink: true #代码框不展开，需点击 '>' 打开
 
 在默认情况下，Hexo 在编译的时候不会实现代码自动换行。如果你不希望在代码块的区域里有横向滚动条的话，那么你可以考虑开启这个功能。
 
-修改 <font color="red">主题配置文件</font>
+修改 主题配置文件
 
 ```yaml
-修改 <font color="red">主题配置文件</font>
+修改 主题配置文件
 ```
 
-如果你是使用 highlight 渲染，需要找到你站点的 Hexo 配置文件 <font color="red">`_config.yml`</font>，将 <font color="red">`line_number`</font>改成 <font color="red">`false`</font>:
+如果你是使用 highlight 渲染，需要找到你站点的 Hexo 配置文件 `_config.yml`，将 `line_number`改成 `false`:
 
 ```yaml
 highlight:
@@ -215,7 +215,7 @@ highlight:
   tab_replace:
 ```
 
-如果你是使用 prismjs 渲染，需要找到你站点的 Hexo 配置文件 <font color="red">`_config.yml`</font>，将 <font color="red">`line_number`</font>改成 <font color="red">`false`</font>:
+如果你是使用 prismjs 渲染，需要找到你站点的 Hexo 配置文件 `_config.yml`，将 `line_number`改成 `false`:
 
 ```yaml
 prismjs:
@@ -225,11 +225,11 @@ prismjs:
   tab_replace: ''
 ```
 
-> 设置<font color="red">`code_word_wrap`</font>之前:
+> 设置`code_word_wrap`之前:
 
 ![](https://raw.githubusercontent.com/winstone-su/imageHosting/main/image/202303071659102.png)
 
-> 设置<font color="red">`code_word_wrap`</font>之后:
+> 设置`code_word_wrap`之后:
 
 ![img](https://raw.githubusercontent.com/winstone-su/imageHosting/main/image/202303071659236.png)
 
@@ -245,15 +245,15 @@ highlight_height_limit: false # unit: px
 
 注意：
 
-1. 单位是<font color="red">` px`</font>，直接添加数字，如 200
-2. 实际限制高度为<font color="red">` highlight_height_limit + 30 px`</font> ，多增加 30px 限制，目的是避免代码高度只超出highlight_height_limit 一点时，出现展开按钮，展开没内容。
+1. 单位是` px`，直接添加数字，如 200
+2. 实际限制高度为` highlight_height_limit + 30 px` ，多增加 30px 限制，目的是避免代码高度只超出highlight_height_limit 一点时，出现展开按钮，展开没内容。
 3. 不适用于隐藏后的代码块（ css 设置 display: none）
 
 ## 社交图标
 
 Butterfly支持 [font-awesome v6](https://fontawesome.com/icons?from=io)图标.
 
-书写格式 <font color="red">`图标名：url || 描述性文字`</font>
+书写格式 `图标名：url || 描述性文字`
 
 ```yaml
 social:
@@ -298,7 +298,7 @@ index_post_content:
 
 ## 顶部图
 
-> 如果不要显示顶部图，可直接配置 <font color="red">`disable_top_img: true`</font>
+> 如果不要显示顶部图，可直接配置 `disable_top_img: true`
 
 > 顶部图的获取顺序，如果都没有配置，则不显示顶部图。
 >
@@ -322,7 +322,7 @@ index_post_content:
 | category_img     | category 子页面 的 默认 top_img                              |
 | category_per_img | category 子页面的 top_img，可配置每个 category 的 top_img    |
 
-其它页面 （tags/categories/自建页面）和 文章页 的 <font color="red">`top_img`</font> ，请到对应的 md 页面设置<font color="red">`front-matter`</font>中的<font color="red">`top_img`</font>
+其它页面 （tags/categories/自建页面）和 文章页 的 `top_img` ，请到对应的 md 页面设置`front-matter`中的`top_img`
 
 以上所有的 top_img 可配置以下值
 
